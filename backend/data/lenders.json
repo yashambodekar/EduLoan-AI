@@ -1,0 +1,37 @@
+[
+  {
+    "name": "SBI Scholar Loan",
+    "interest_rate": "8.5%",
+    "max_amount": "40 Lakhs",
+    "risk": "low",
+    "study_abroad": true
+  },
+  {
+    "name": "Canara Vidya Turant",
+    "interest_rate": "8.8%",
+    "max_amount": "50 Lakhs",
+    "risk": "low",
+    "study_abroad": true
+  },
+  {
+    "name": "Bank of Baroda Scholar",
+    "interest_rate": "8.9%",
+    "max_amount": "30 Lakhs",
+    "risk": "medium",
+    "study_abroad": false
+  },
+  {
+    "name": "HDFC Credila",
+    "interest_rate": "9.5%",
+    "max_amount": "1 Crore",
+    "risk": "medium",
+    "study_abroad": true
+  },
+  {
+    "name": "ICICI Education Loan",
+    "interest_rate": "10%",
+    "max_amount": "75 Lakhs",
+    "risk": "medium",
+    "study_abroad": true
+  }
+]

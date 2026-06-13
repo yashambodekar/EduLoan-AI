@@ -18,6 +18,12 @@ from services.llm_service import (
     generate_explanation
 )
 
+from services.recommendation_service import (
+    recommend_lenders
+)
+
+
+
 router = APIRouter()
 
 @router.post("/predict")
@@ -49,11 +55,16 @@ def predict(
     "top_negative_factors"
     ]
 
+    recommended_lenders = recommend_lenders(
+    result["approval_probability"]
+    )
+
     llm_explanation = generate_explanation(
     result["prediction"],
     result["approval_probability"],
     positive,
-    negative
+    negative,
+    recommended_lenders
     )
 
     return {
@@ -71,5 +82,8 @@ def predict(
     negative,
 
     "llm_explanation":
-    llm_explanation
+    llm_explanation,
+
+    "recommended_lenders":
+    recommended_lenders
 }

@@ -53,6 +53,9 @@ def explain_prediction(
         .head(3)
     )
 
+    positive["impact"] = positive["impact"].round(3)
+    negative["impact"] = negative["impact"].round(3)
+
     return {
         "top_positive_factors":
         positive.to_dict(

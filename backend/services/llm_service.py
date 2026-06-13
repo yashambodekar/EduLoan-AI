@@ -23,30 +23,37 @@ def generate_explanation(
     prediction,
     probability,
     positive_factors,
-    negative_factors
+    negative_factors,
+    recommended_lenders
 ):
 
   prompt = f"""
-  You are an AI Education Loan Advisor.
+You are an AI Education Loan Advisor.
 
-  Prediction: {prediction}
-  Approval Probability: {probability}%
+Prediction:
+{prediction}
 
-  Top Positive Factors:
-  {positive_factors}
+Approval Probability:
+{probability}%
 
-  Top Negative Factors:
-  {negative_factors}
+Positive Factors:
+{positive_factors}
 
-  Generate:
+Negative Factors:
+{negative_factors}
 
-  1. Approval Summary (2 lines)
-  2. Key Strengths (bullet points)
-  3. Potential Concerns (bullet points)
-  4. Recommendation to improve approval chances
+Recommended Lenders:
+{recommended_lenders}
 
-  Keep the response professional and student-friendly.
-  """
+Generate:
+
+1. Approval Summary
+2. Key Strengths
+3. Concerns
+4. Why these lenders are recommended
+
+Keep response concise.
+"""
 
   response = llm.invoke(
         prompt
